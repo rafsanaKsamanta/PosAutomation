@@ -106,27 +106,27 @@ public class HoldRecall {
 
 
 
-//    @Test(priority = 5,testName = "TC_05",description = "Focus on cash field")
-//    public void cash(){
-//
-//        WebElement pressEnter=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
-//        pressEnter.sendKeys(Keys.ENTER);
-//
-//        WebElement CashFocus1=pos.findElementByName("0");
-//        CashFocus1.sendKeys(Keys.ENTER);
-//
-//    }
-//
-//
-//    @Test(priority = 6,testName = "TC_06",description = "Sales, invoice creation and back to new sale screen")
-//    public void sale(){
-//
-//        WebElement CashFocus1=pos.findElementByName("0");
-//        CashFocus1.sendKeys(Keys.ENTER);
-//
-//        pos.findElementByName("OK").click(); //ok button click and back to sales screen
-//
-//    }
+    @Test(priority = 7,testName = "TC_05",description = "Focus on cash field")
+    public void cash(){
+
+        WebElement pressEnter=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
+        pressEnter.sendKeys(Keys.ENTER);
+
+        WebElement CashFocus1=pos.findElementByName("0");
+        CashFocus1.sendKeys(Keys.ENTER);
+
+    }
+
+
+    @Test(priority = 8,testName = "TC_06",description = "Sales, invoice creation and back to new sale screen")
+    public void sale(){
+
+        WebElement CashFocus1=pos.findElementByName("0");
+        CashFocus1.sendKeys(Keys.ENTER);
+
+        pos.findElementByName("OK").click(); //ok button click and back to sales screen
+
+    }
 
 
 
