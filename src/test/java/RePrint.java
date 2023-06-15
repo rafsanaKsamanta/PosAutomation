@@ -14,7 +14,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.concurrent.TimeUnit;
 
-public class NewCusCreate {
+public class RePrint {
     private static WindowsDriver pos = null;
     public static String getDate(){
         LocalDate date = LocalDate.now();
@@ -54,39 +54,30 @@ public class NewCusCreate {
     }
 
 
-    @Test(priority = 2 , testName = "TC_02",description = "Add items to sales screen")
-    public void addItem(){
-        pos.findElementByName("Scan or enter Barcode (Alt+B) ........").sendKeys("88801");
-        WebElement pressEnter1=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
-        pressEnter1.sendKeys(Keys.ENTER);
-
-        pos.findElementByName("Scan or enter Barcode (Alt+B) ........").sendKeys("88803");
-        WebElement pressEnter2=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
-        pressEnter2.sendKeys(Keys.ENTER);
-
-//        pos.findElementByName("Password").sendKeys("******");
-//        pos.findElementByClassName("Button").click();
-    }
-
-    @Test(priority =3 , testName = "TC_03",description = "item qty change")
-    public void qtyChange(){
-        WebElement pressf8 = pos.findElementByName("1.0");
-        pressf8.sendKeys(Keys.F8);
-        pressf8.sendKeys("5");
-
-        WebElement pressEnter2=pos.findElementByName("1.0");
-        pressEnter2.sendKeys(Keys.ENTER);
-
-    }
-
-    @Test(priority =4 , testName = "TC_04",description = "customer create alt+c")
-    public void newCus(){
-        WebElement cusCre = pos.findElementByClassName("Image");
-
-
-
-    }
-
+//    @Test(priority = 2 , testName = "TC_02",description = "Add items to sales screen")
+//    public void addItem(){
+//        pos.findElementByName("Scan or enter Barcode (Alt+B) ........").sendKeys("101");
+//        WebElement pressEnter1=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
+//        pressEnter1.sendKeys(Keys.ENTER);
+//
+//        pos.findElementByName("Scan or enter Barcode (Alt+B) ........").sendKeys("103");
+//        WebElement pressEnter2=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
+//        pressEnter2.sendKeys(Keys.ENTER);
+//
+////        pos.findElementByName("Password").sendKeys("******");
+////        pos.findElementByClassName("Button").click();
+//    }
+//
+//    @Test(priority =3 , testName = "TC_03",description = "item qty change")
+//    public void qtyChange(){
+//        WebElement pressf8 = pos.findElementByName("1.0");
+//        pressf8.sendKeys(Keys.F8);
+//        pressf8.sendKeys("5");
+//
+//        WebElement pressEnter2=pos.findElementByName("1.0");
+//        pressEnter2.sendKeys(Keys.ENTER);
+//
+//    }
 //    @Test(priority = 4 , testName = "TC_04",description = "Add customer to sales screen")
 //    public void addCustomer(){
 //
@@ -94,7 +85,7 @@ public class NewCusCreate {
 //        WebElement pressEnter=pos.findElementByName("Enter Customer No (Alt+M)....");
 //        pressEnter.sendKeys(Keys.ENTER);
 //    }
-
+//
 //    @Test(priority = 5,testName = "TC_05",description = "Focus on cash field")
 //    public void cash(){
 //
@@ -116,6 +107,16 @@ public class NewCusCreate {
 //        pos.findElementByName("OK").click(); //ok button click and back to sales screen
 //
 //    }
+
+
+
+    @Test(priority = 8,testName = "TC_07",description = "Reprint from existing invoice")
+    public void rePrint(){
+        pos.findElementByName("Invoice Page").click();
+
+        //click reprint
+
+    }
 
 
 

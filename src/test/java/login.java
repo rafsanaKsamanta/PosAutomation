@@ -62,6 +62,8 @@ public class login {
 
         pos.findElementByName("Scan or enter Barcode (Alt+B) ........").sendKeys("88803");
         WebElement pressEnter2=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
+
+
         pressEnter2.sendKeys(Keys.ENTER);
 
 //        pos.findElementByName("Password").sendKeys("******");
