@@ -24,7 +24,7 @@ public class NewCusCreate {
     public static void setUp() {
         try {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("app", "C:\\Program Files\\WindowsApps\\CF9BD7D4-0F9A-4730-8950-05D032861D46_2.0.71.0_x64__4rafj02apad6w\\POS.exe");
+            capabilities.setCapability("app", "C:\\Program Files\\WindowsApps\\CF9BD7D4-0F9A-4730-8950-05D032861D46_2.0.73.0_x64__4rafj02apad6w\\POS.exe");
             capabilities.setCapability("platformName","Windows");
             capabilities.setCapability("deviceName", "WindowsPC");
             pos = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
@@ -81,7 +81,7 @@ public class NewCusCreate {
 
     @Test(priority =4 , testName = "TC_04",description = "customer create alt+c")
     public void newCus(){
-        WebElement cusCre = pos.findElementByClassName("Image");
+        WebElement cusCre = pos.findElementByClassName("CustomerAdd");
 
 
 

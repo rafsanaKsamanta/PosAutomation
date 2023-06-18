@@ -1,6 +1,5 @@
 import io.appium.java_client.windows.WindowsDriver;
 import javafx.scene.layout.Priority;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -13,10 +12,9 @@ import org.testng.annotations.Test;
 import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class RePrint {
+public class Exchange {
     private static WindowsDriver pos = null;
     public static String getDate(){
         LocalDate date = LocalDate.now();
@@ -56,20 +54,32 @@ public class RePrint {
     }
 
 
+    @Test(priority = 2,testName = "TC_02",description = "Exchange")
+    public void exchange (){
+        WebElement pressf5=pos.findElementByName("Exchange /Return (F5)");
+        pressf5.sendKeys(Keys.F5);
+
+        pos.findElementByName("Search Invoice").sendKeys("12223061515521300016");
+
+        WebElement pressEnter=pos.findElementByName("Search Invoice");
+        pressEnter.sendKeys(Keys.ENTER);
 
 
-    @Test(priority = 2,testName = "TC_02",description = "Go to invoice page")
-    public void invoicePage(){
-        pos.findElementByName("Invoice Page").click();
+        WebElement pressTab=pos.findElementByName("Search Invoice");
+        pressTab.sendKeys(Keys.TAB);
 
+        WebElement pressTab2=pos.findElementByName("For Return");
+        pressTab2.sendKeys(Keys.TAB);
+
+
+        pos.findElementById("btnExchangeView").click();
 
 
     }
 
-    @Test(priority = 3,testName = "TC_09",description = "reprint invoice")
-    public void reprint(){
-        pos.findElementByAccessibilityId("InvoicePrint").click();
-    }
+
+
+
 
 
 }

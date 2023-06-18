@@ -16,7 +16,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class RePrint {
+public class CheckBox {
     private static WindowsDriver pos = null;
     public static String getDate(){
         LocalDate date = LocalDate.now();
@@ -58,7 +58,7 @@ public class RePrint {
 
 
 
-    @Test(priority = 2,testName = "TC_02",description = "Go to invoice page")
+    @Test(priority = 2,testName = "TC_07",description = "Go to invoice page")
     public void invoicePage(){
         pos.findElementByName("Invoice Page").click();
 
@@ -66,9 +66,27 @@ public class RePrint {
 
     }
 
-    @Test(priority = 3,testName = "TC_09",description = "reprint invoice")
-    public void reprint(){
-        pos.findElementByAccessibilityId("InvoicePrint").click();
+    @Test(priority = 3,testName = "TC_09",description = "Online to Offline")
+    public void checkboxOffline(){
+        pos.findElementByClassName("CheckBox").click();
+    }
+
+    @Test(priority = 4,testName = "TC_10",description = "Offline to Online")
+    public void checkboxOnline(){
+        pos.findElementByClassName("CheckBox").click();
+    }
+
+    @Test(priority = 5,testName = "TC_11",description = "Online to Offline")
+    public void checkboxSync(){
+
+        pos.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        pos.findElementByAccessibilityId("synchronous_assynchronous_CheckBox").click();
+
+    }
+
+    @Test(priority = 6,testName = "TC_12",description = "Offline to Online")
+    public void checkboxNotsync(){
+        pos.findElementByAccessibilityId("synchronous_assynchronous_CheckBox").click();
     }
 
 
