@@ -47,33 +47,68 @@ public class Exchange {
     }
 
 
-//    @Test(priority = 2,testName = "TC_02",description = "Invoice Search and input to sales screen")
-//    public void searchInvoice (){
-//        WebElement pressf5=pos.findElementByName("Exchange /Return (F5)");
-//        pressf5.sendKeys(Keys.F5);
-//
-//        pos.findElementByName("Search Invoice").sendKeys("12223061515521300016");
-//
-//        WebElement pressEnter=pos.findElementByName("Search Invoice");
-//        pressEnter.sendKeys(Keys.ENTER);
-//
-//
-//    }
+    @Test(priority = 2,testName = "TC_02",description = "Invoice Search and input to sales screen")
+    public void searchInvoice (){
+        WebElement pressf5=pos.findElementByName("Exchange /Return (F5)");
+        pressf5.sendKeys(Keys.F5);
 
-//    @Test(priority = 3,testName = "TC_13",description = "")
-//    public void exchange(){
-//
-//        pos.findElementByAccessibilityId("btnExchangeView").click();
-//
-//
-//        pos.findElementByAccessibilityId("PrimaryButton").click(); // not working
-//
-//    }
+        pos.findElementByName("Search Invoice").sendKeys("12223061515521300016");
+
+        WebElement pressEnter=pos.findElementByName("Search Invoice");
+        pressEnter.sendKeys(Keys.ENTER);
 
 
+    }
+
+    @Test(priority = 3,testName = "TC_13",description = "")
+    public void exchange(){
+
+        pos.findElementByAccessibilityId("btnExchangeView").click();
 
 
+        pos.findElementByAccessibilityId("PrimaryButton").click(); // not working
 
+    }
+
+    @Test(priority = 4 , testName = "TC_02",description = "Add items to sales screen")
+    public void addItem(){
+        pos.findElementByName("Scan or enter Barcode (Alt+B) ........").sendKeys("88801");
+        WebElement pressEnter1=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
+        pressEnter1.sendKeys(Keys.ENTER);
+
+    }
+
+    @Test(priority =4 , testName = "TC_03",description = "item qty change")
+    public void qtyChange(){
+        WebElement pressf8 = pos.findElementByName("1.0");
+        pressf8.sendKeys(Keys.F8);
+        pressf8.sendKeys("7");
+
+        WebElement pressEnter2=pos.findElementByName("1.0");
+        pressEnter2.sendKeys(Keys.ENTER);
+
+    }
+
+    @Test(priority = 5,testName = "TC_05",description = "Focus on cash field")
+    public void cash(){
+
+        WebElement pressEnter=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
+        pressEnter.sendKeys(Keys.ENTER);
+
+        WebElement CashFocus1=pos.findElementByName("0");
+        CashFocus1.sendKeys(Keys.ENTER);
+
+    }
+
+    @Test(priority = 6,testName = "TC_06",description = "Sales, invoice creation and back to new sale screen")
+    public void sale(){
+
+        WebElement CashFocus1=pos.findElementByName("0");
+        CashFocus1.sendKeys(Keys.ENTER);
+
+        pos.findElementByName("OK").click(); //ok button click and back to sales screen
+
+    }
 
 
 }
