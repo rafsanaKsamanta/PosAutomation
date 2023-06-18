@@ -81,7 +81,7 @@ public class NewCusCreate {
 
     @Test(priority =4 , testName = "TC_04",description = "customer create alt+c")
     public void newCus(){
-        WebElement cusCre = pos.findElementByClassName("CustomerAdd");
+        pos.findElementByAccessibilityId("11344").click();
 
 
 
