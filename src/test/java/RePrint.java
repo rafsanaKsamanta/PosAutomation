@@ -65,10 +65,11 @@ public class RePrint {
 
 
     }
-
+    //reprint from existing invoice
     @Test(priority = 3,testName = "TC_09",description = "reprint invoice")
     public void reprint(){
         pos.findElementByAccessibilityId("InvoicePrint").click();
+
     }
 
 
