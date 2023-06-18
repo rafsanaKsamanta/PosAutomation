@@ -34,15 +34,7 @@ public class Exchange {
             e.printStackTrace();
         }
     }
-    //    @AfterMethod
-//    public void cleanApp(){
-//        pos.quit();
-//        setUp();
-//    }
-//    @AfterSuite
-//    public void tearDown(){
-//        pos.quit();
-//    }
+
     @Test(priority = 1 , testName = "TC_01" , description = "Open app on desktop and login")
     public void loginPos() {
         pos.findElementByName("User ID").sendKeys("01558102056");
@@ -51,31 +43,33 @@ public class Exchange {
         pos.findElementByClassName("Button").click();
 
 
-    }
-
-
-    @Test(priority = 2,testName = "TC_02",description = "Exchange")
-    public void exchange (){
-        WebElement pressf5=pos.findElementByName("Exchange /Return (F5)");
-        pressf5.sendKeys(Keys.F5);
-
-        pos.findElementByName("Search Invoice").sendKeys("12223061515521300016");
-
-        WebElement pressEnter=pos.findElementByName("Search Invoice");
-        pressEnter.sendKeys(Keys.ENTER);
-
-
-        WebElement pressTab=pos.findElementByName("Search Invoice");
-        pressTab.sendKeys(Keys.TAB);
-
-        WebElement pressTab2=pos.findElementByName("For Return");
-        pressTab2.sendKeys(Keys.TAB);
-
-
-        pos.findElementById("btnExchangeView").click();
-
 
     }
+
+
+//    @Test(priority = 2,testName = "TC_02",description = "Invoice Search and input to sales screen")
+//    public void searchInvoice (){
+//        WebElement pressf5=pos.findElementByName("Exchange /Return (F5)");
+//        pressf5.sendKeys(Keys.F5);
+//
+//        pos.findElementByName("Search Invoice").sendKeys("12223061515521300016");
+//
+//        WebElement pressEnter=pos.findElementByName("Search Invoice");
+//        pressEnter.sendKeys(Keys.ENTER);
+//
+//
+//    }
+
+//    @Test(priority = 3,testName = "TC_13",description = "")
+//    public void exchange(){
+//
+//        pos.findElementByAccessibilityId("btnExchangeView").click();
+//
+//
+//        pos.findElementByAccessibilityId("PrimaryButton").click(); // not working
+//
+//    }
+
 
 
 
