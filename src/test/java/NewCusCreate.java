@@ -1,7 +1,9 @@
 import io.appium.java_client.windows.WindowsDriver;
 import javafx.scene.layout.Priority;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -9,6 +11,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.time.LocalDate;
@@ -24,7 +27,7 @@ public class NewCusCreate {
     public static void setUp() {
         try {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("app", "C:\\Program Files\\WindowsApps\\CF9BD7D4-0F9A-4730-8950-05D032861D46_2.0.73.0_x64__4rafj02apad6w\\POS.exe");
+            capabilities.setCapability("app", "C:\\Program Files\\WindowsApps\\CF9BD7D4-0F9A-4730-8950-05D032861D46_2.0.74.0_x64__4rafj02apad6w\\POS.exe");
             capabilities.setCapability("platformName","Windows");
             capabilities.setCapability("deviceName", "WindowsPC");
             pos = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
@@ -81,11 +84,13 @@ public class NewCusCreate {
 
     @Test(priority =4 , testName = "TC_04",description = "customer create alt+c")
     public void newCus(){
-        pos.findElementByAccessibilityId("11344").click();
 
-
+        pos.findElement(By.className("Image")).sendKeys(Keys.chord(Keys.ALT, "c"));
 
     }
+
+
+
 
 //    @Test(priority = 4 , testName = "TC_04",description = "Add customer to sales screen")
 //    public void addCustomer(){

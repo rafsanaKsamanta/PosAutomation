@@ -54,8 +54,13 @@ public class Exchange {
 
         pos.findElementByName("Search Invoice").sendKeys("12223061515521300016");
 
+
         WebElement pressEnter=pos.findElementByName("Search Invoice");
         pressEnter.sendKeys(Keys.ENTER);
+
+        // If return click check box then
+
+
 
 
     }
