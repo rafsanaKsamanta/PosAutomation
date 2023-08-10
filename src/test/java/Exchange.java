@@ -1,5 +1,5 @@
 import io.appium.java_client.windows.WindowsDriver;
-import javafx.scene.layout.Priority;
+//import javafx.scene.layout.Priority;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.DesiredCapabilities;

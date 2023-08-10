@@ -24,7 +24,7 @@ public class SpecialDis {
     public static void setUp() {
         try {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("app", "C:\\Program Files\\WindowsApps\\CF9BD7D4-0F9A-4730-8950-05D032861D46_2.0.73.0_x64__4rafj02apad6w\\POS.exe");
+            capabilities.setCapability("app", "C:\\Program Files\\WindowsApps\\CF9BD7D4-0F9A-4730-8950-05D032861D46_2.0.101.0_x64__4rafj02apad6w\\POS.exe");
             capabilities.setCapability("platformName","Windows");
             capabilities.setCapability("deviceName", "WindowsPC");
             pos = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
@@ -37,7 +37,7 @@ public class SpecialDis {
 
     @Test(priority = 1 , testName = "TC_01" , description = "Open app on desktop and login")
     public void loginPos() {
-        pos.findElementByName("User ID").sendKeys("01558102056");
+        pos.findElementByName("User ID").sendKeys("01558102053");
         pos.findElementByName("Password").sendKeys("123456");
         pos.findElementByName("Go Offline").click(); //for offline operations
         pos.findElementByClassName("Button").click();
@@ -48,11 +48,11 @@ public class SpecialDis {
 
     @Test(priority = 2 , testName = "TC_02",description = "Add items to sales screen")
     public void addItem(){
-        pos.findElementByName("Scan or enter Barcode (Alt+B) ........").sendKeys("88801");
+        pos.findElementByName("Scan or enter Barcode (Alt+B) ........").sendKeys("101");
         WebElement pressEnter1=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
         pressEnter1.sendKeys(Keys.ENTER);
 
-        pos.findElementByName("Scan or enter Barcode (Alt+B) ........").sendKeys("88803");
+        pos.findElementByName("Scan or enter Barcode (Alt+B) ........").sendKeys("102");
         WebElement pressEnter2=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
         pressEnter2.sendKeys(Keys.ENTER);
 
@@ -72,7 +72,7 @@ public class SpecialDis {
     @Test(priority = 4 , testName = "TC_04",description = "Add customer to sales screen")
     public void addCustomer(){
 
-        pos.findElementByName("Enter Customer No (Alt+M)....").sendKeys("01522222221");
+        pos.findElementByName("Enter Customer No (Alt+M)....").sendKeys("01558102053");
         WebElement pressEnter=pos.findElementByName("Enter Customer No (Alt+M)....");
         pressEnter.sendKeys(Keys.ENTER);
     }
