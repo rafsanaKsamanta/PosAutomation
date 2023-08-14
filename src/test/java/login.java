@@ -1,6 +1,7 @@
 import io.appium.java_client.windows.WindowsDriver;
 import javafx.scene.layout.Priority;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -13,6 +14,8 @@ import org.testng.annotations.Test;
 import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class login {
@@ -57,18 +60,32 @@ public class login {
 
     @Test(priority = 2 , testName = "TC_02",description = "Add items to sales screen")
     public void addItem(){
-        pos.findElementByName("Scan or enter Barcode (Alt+B) ........").sendKeys("565");
-        WebElement pressEnter1=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
-        pressEnter1.sendKeys(Keys.ENTER);
 
-        pos.findElementByName("Scan or enter Barcode (Alt+B) ........").sendKeys("565");
-        WebElement pressEnter2=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
+        WebElement barcodeInput = pos.findElement(By.name("Scan or enter Barcode (Alt+B) ........"));
 
+        // List of barcode numbers to scan
+        List<String> barcodeNumbers = new ArrayList<>();
+        barcodeNumbers.add("845944053558");
+        barcodeNumbers.add("842251185262");
+        barcodeNumbers.add("842251187037");
+        barcodeNumbers.add("845944068972");
+        // ... add more barcode numbers
 
-        pressEnter2.sendKeys(Keys.ENTER);
+        // Simulate scanning each barcode
+        for (String barcodeNumber : barcodeNumbers) {
+            // Enter the barcode number
+            barcodeInput.sendKeys(barcodeNumber);
 
-//        pos.findElementByName("Password").sendKeys("******");
-//        pos.findElementByClassName("Button").click();
+            // Trigger scanning action (e.g., press Enter)
+            barcodeInput.sendKeys(Keys.ENTER);
+
+            // Pause to simulate the time between scans (if needed)
+            try {
+                Thread.sleep(1000); // Adjust the sleep time as needed
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Test(priority =3 , testName = "TC_03",description = "item qty change")
@@ -84,7 +101,7 @@ public class login {
     @Test(priority = 4 , testName = "TC_04",description = "Add customer to sales screen")
     public void addCustomer(){
 
-        pos.findElementByName("Enter Customer No (Alt+M)....").sendKeys("01558102053");
+        pos.findElementByName("Enter Customer No (Alt+M)....").sendKeys("999");
         WebElement pressEnter=pos.findElementByName("Enter Customer No (Alt+M)....");
         pressEnter.sendKeys(Keys.ENTER);
     }

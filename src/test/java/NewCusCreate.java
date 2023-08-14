@@ -15,6 +15,8 @@ import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class NewCusCreate {
@@ -37,15 +39,7 @@ public class NewCusCreate {
             e.printStackTrace();
         }
     }
-    //    @AfterMethod
-//    public void cleanApp(){
-//        pos.quit();
-//        setUp();
-//    }
-//    @AfterSuite
-//    public void tearDown(){
-//        pos.quit();
-//    }
+
     @Test(priority = 1 , testName = "TC_01" , description = "Open app on desktop and login")
     public void loginPos() {
         pos.findElementByName("User ID").sendKeys("01558102053");
@@ -57,19 +51,34 @@ public class NewCusCreate {
     }
 
 
-//    @Test(priority = 2 , testName = "TC_02",description = "Add items to sales screen")
-//    public void addItem(){
-//        pos.findElementByName("Scan or enter Barcode (Alt+B) ........").sendKeys("88801");
-//        WebElement pressEnter1=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
-//        pressEnter1.sendKeys(Keys.ENTER);
-//
-//        pos.findElementByName("Scan or enter Barcode (Alt+B) ........").sendKeys("88803");
-//        WebElement pressEnter2=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
-//        pressEnter2.sendKeys(Keys.ENTER);
-//
-////        pos.findElementByName("Password").sendKeys("******");
-////        pos.findElementByClassName("Button").click();
-//    }
+    @Test(priority = 2 , testName = "TC_02",description = "Add items to sales screen")
+    public void addItem(){
+
+        WebElement barcodeInput = pos.findElement(By.name("Scan or enter Barcode (Alt+B) ........"));
+
+        // List of barcode numbers to scan
+        List<String> barcodeNumbers = new ArrayList<>();
+        barcodeNumbers.add("845944053558");
+        barcodeNumbers.add("842251185262");
+
+        // ... add more barcode numbers
+
+        // Simulate scanning each barcode
+        for (String barcodeNumber : barcodeNumbers) {
+            // Enter the barcode number
+            barcodeInput.sendKeys(barcodeNumber);
+
+            // Trigger scanning action (e.g., press Enter)
+            barcodeInput.sendKeys(Keys.ENTER);
+
+            // Pause to simulate the time between scans (if needed)
+            try {
+                Thread.sleep(1000); // Adjust the sleep time as needed
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 //
 //    @Test(priority =3 , testName = "TC_03",description = "item qty change")
 //    public void qtyChange(){

@@ -84,6 +84,46 @@ public class MultipleBarcodeScan {
         }
         }
 
+    @Test(priority =3 , testName = "TC_03",description = "item qty change")
+    public void qtyChange(){
+        WebElement pressf8 = pos.findElementByName("1.0");
+        pressf8.sendKeys(Keys.F8);
+        pressf8.sendKeys("5");
+
+        WebElement pressEnter2=pos.findElementByName("1.0");
+        pressEnter2.sendKeys(Keys.ENTER);
+
+    }
+    @Test(priority = 4 , testName = "TC_04",description = "Add customer to sales screen")
+    public void addCustomer(){
+
+        pos.findElementByName("Enter Customer No (Alt+M)....").sendKeys("999");
+        WebElement pressEnter=pos.findElementByName("Enter Customer No (Alt+M)....");
+        pressEnter.sendKeys(Keys.ENTER);
+    }
+
+    @Test(priority = 5,testName = "TC_05",description = "Focus on cash field")
+    public void cash(){
+
+        WebElement pressEnter=pos.findElementByName("Scan or enter Barcode (Alt+B) ........");
+        pressEnter.sendKeys(Keys.ENTER);
+
+        WebElement CashFocus1=pos.findElementByName("0");
+        CashFocus1.sendKeys(Keys.ENTER);
+
+    }
+
+
+    @Test(priority = 6,testName = "TC_06",description = "Sales, invoice creation and back to new sale screen")
+    public void sale(){
+
+        WebElement CashFocus1=pos.findElementByName("0");
+        CashFocus1.sendKeys(Keys.ENTER);
+
+        pos.findElementByName("OK").click(); //ok button click and back to sales screen
+
+    }
+
 
     }
 
