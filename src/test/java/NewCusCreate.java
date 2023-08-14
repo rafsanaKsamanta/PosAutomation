@@ -58,7 +58,7 @@ public class NewCusCreate {
 
         // List of barcode numbers to scan
         List<String> barcodeNumbers = new ArrayList<>();
-        barcodeNumbers.add("845944053558");
+
         barcodeNumbers.add("842251185262");
 
         // ... add more barcode numbers
@@ -94,10 +94,25 @@ public class NewCusCreate {
     @Test(priority =4 , testName = "TC_04",description = "customer create alt+c")
     public void newCus(){
 
-        pos.findElement(By.className("Image")).sendKeys(Keys.chord(Keys.ALT, "c"));
+//        pos.findElement(By.className("Image")).sendKeys(Keys.chord(Keys.ALT, "c"));
+
+        pos.findElementByClassName("Image").sendKeys(Keys.chord(Keys.ALT,"c"));
+
+        // Locate the element you want to interact with
+        WebElement element = pos.findElement(By.className("Image"));
+
+        // Initialize the Actions class
+        Actions actions = new Actions(pos);
+        actions.keyDown(Keys.ALT).sendKeys("c").keyUp(Keys.ALT).build().perform();
+
+        pos.findElementByName("Customer Name :").sendKeys("Ivan");
+        pos.findElementByName("Mobile No :").sendKeys("01558102044");
+        pos.findElementByName("Save").click();
+        pos.findElementByName("OK").click();
+
+
 
     }
-
 
 
 
