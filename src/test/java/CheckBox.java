@@ -4,9 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 

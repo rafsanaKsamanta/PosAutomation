@@ -28,7 +28,7 @@ public class login {
     public static void setUp() {
         try {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("app", "C:\\Program Files\\WindowsApps\\CF9BD7D4-0F9A-4730-8950-05D032861D46_2.0.101.0_x64__4rafj02apad6w\\POS.exe");
+            capabilities.setCapability("app", "C:\\Program Files\\WindowsApps\\CF9BD7D4-0F9A-4730-8950-05D032861D46_2.0.104.0_x64__0vy7f2qngagxj\\POS.exe");
             capabilities.setCapability("platformName","Windows");
             capabilities.setCapability("deviceName", "WindowsPC");
             pos = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
@@ -38,22 +38,13 @@ public class login {
             e.printStackTrace();
         }
     }
-//    @AfterMethod
-//    public void cleanApp(){
-//        pos.quit();
-//        setUp();
-//    }
-//    @AfterSuite
-//    public void tearDown(){
-//        pos.quit();
-//    }
+
     @Test(priority = 1, testName = "TC_01" , description = "Open app on desktop and login")
     public void loginPos() {
         pos.findElementByName("User ID").sendKeys("01558102053");
         pos.findElementByName("Password").sendKeys("123456");
 //        pos.findElementByName("Go Offline").click(); //for offline operations
         pos.findElementByClassName("Button").click();
-
 
     }
 
@@ -65,10 +56,12 @@ public class login {
 
         // List of barcode numbers to scan
         List<String> barcodeNumbers = new ArrayList<>();
-        barcodeNumbers.add("845944053558");
-        barcodeNumbers.add("842251185262");
-        barcodeNumbers.add("842251187037");
-        barcodeNumbers.add("845944068972");
+        barcodeNumbers.add("611");
+        barcodeNumbers.add("612");
+        barcodeNumbers.add("613");
+        barcodeNumbers.add("614");
+        barcodeNumbers.add("615");
+        barcodeNumbers.add("616");
         // ... add more barcode numbers
 
         // Simulate scanning each barcode
@@ -101,7 +94,7 @@ public class login {
     @Test(priority = 4 , testName = "TC_04",description = "Add customer to sales screen")
     public void addCustomer(){
 
-        pos.findElementByName("Enter Customer No (Alt+M)....").sendKeys("999");
+        pos.findElementByName("Enter Customer No (Alt+M)....").sendKeys("01558102046");
         WebElement pressEnter=pos.findElementByName("Enter Customer No (Alt+M)....");
         pressEnter.sendKeys(Keys.ENTER);
     }
@@ -127,7 +120,6 @@ public class login {
         pos.findElementByName("OK").click(); //ok button click and back to sales screen
 
     }
-
 
 
     }
