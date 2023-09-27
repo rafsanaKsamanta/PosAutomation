@@ -28,7 +28,7 @@ public class login {
     public static void setUp() {
         try {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("app", "C:\\Program Files\\WindowsApps\\CF9BD7D4-0F9A-4730-8950-05D032861D46_3.0.5.0_x64__0vy7f2qngagxj\\POS.exe");
+            capabilities.setCapability("app", "C:\\Program Files\\WindowsApps\\CF9BD7D4-0F9A-4730-8950-05D032861D46_3.0.18.0_x64__0vy7f2qngagxj\\POS.exe");
             capabilities.setCapability("platformName","Windows");
             capabilities.setCapability("deviceName", "WindowsPC");
             pos = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
@@ -52,7 +52,7 @@ public class login {
     @Test(priority = 2 , testName = "TC_02",description = "Add items to sales screen")
     public void addItem(){
 
-        WebElement barcodeInput = pos.findElement(By.name("Scan or enter Barcode (Alt+B) ........"));
+        WebElement barcodeInput = pos.findElementByName("Search Item (Alt+B) ........");
 
         // List of barcode numbers to scan
         List<String> barcodeNumbers = new ArrayList<>();
