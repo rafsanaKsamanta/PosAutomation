@@ -41,6 +41,7 @@ public class login {
 
     @Test(priority = 1, testName = "TC_01" , description = "Open app on desktop and login")
     public void loginPos() {
+        //first need to configure counter from admin pannel
         pos.findElementByName("User ID").sendKeys("01558102053");
         pos.findElementByName("Password").sendKeys("123456");
 //        pos.findElementByName("Go Offline").click(); //for offline operations
